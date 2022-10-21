@@ -342,7 +342,7 @@
             "sdio",
             "memory",
             "emmc",
-            "annode",
+            "anode",
             "cathode"
           ],
           "type": "string"
@@ -412,7 +412,9 @@
           "meter",
           "gram",
           "hertz",
-          "percentage"
+          "percentage",
+          "bit",
+          "byte"
         ],
         "type": "string"
       },
@@ -451,6 +453,63 @@
       "valueDefined": {
         "description": "a boolean representing whether a value has been defined",
         "type": "boolean"
+      }
+    }
+  },
+  "package": {
+    "type": "object",
+    "properties": {
+      "length": {
+        "description": "length of a side of a package",
+        "type": "number"
+      },
+      "width": {
+        "description": "width of a side of a package",
+        "type": "number"
+      },
+      "height": {
+        "description": "height of a package",
+        "type": "number"
+      },
+      "dimensionUnit": {
+        "description": "unit used to describe package dimensions",
+        "enum": [
+          "mils",
+          "millimeter"
+        ]
+      },
+      "standardPackageSize": {
+        "description": "name of standard package size (imperial)",
+        "enum": [
+          "0201",
+          "0402",
+          "0603",
+          "0805",
+          "1206"
+        ]
+      },
+      "standardPackageType": {
+        "description": "name of standard package types",
+        "example": [
+          "bga",
+          "wcsp",
+          "qfn",
+          "tssop"
+        ]
+      }
+    }
+  },
+  "conditionalProperty": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "description": "value of property",
+        "$ref": "#/$definitions/unit"
+      },
+      "conditions": {
+        "description": "conditions under which the property is measured",
+        "type": "array",
+        "items": "string"
       }
     }
   }
