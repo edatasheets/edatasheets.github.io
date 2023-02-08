@@ -337,7 +337,7 @@ Buck Example
 ```json
 {
     "componentID": {
-        "partType": "inductor",
+        "partType": "switching regulator",
         "manufacturer": "ACME Components",
         "componentName": "abc123",
         "orderableMPN": "abc123,45",
@@ -429,6 +429,190 @@ Buck Example
         }
     ]
 }
+```
+
+LDO Example
+
+```json
+{
+    "componentID": {
+        "partType": "LDO",
+        "manufacturer": "ACME Components",
+        "componentName": "abc123456",
+        "orderableMPN": "abc123456,45",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-05-23",
+            "datasheetURI": "www.acmecomponents.com/abc123456datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-12-21",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active",
+    },
+    "vinMax": {
+        "siUnit": "volt",
+        "absoluteValue": 3.3,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "voutMin": {
+        "siUnit": "volt",
+        "absoluteValue": 1.35,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "voutMax": {
+        "siUnit": "volt",
+        "absoluteValue": 1.65,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "maxLoadCurrent": {
+        "siUnit": "amp",
+        "absoluteValue": 1,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "package": {
+        "length": 5,
+        "width": 5,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "VIN"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "VOUT"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "VFB"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "EN"
+        }
+    ]
+}
+```
+
+Load Switch Example 
+
+```json
+{
+    "componentID": {
+        "partType": "load switch",
+        "manufacturer": "ACME Components",
+        "componentName": "abc678",
+        "orderableMPN": "abc678,56",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-05-30",
+            "datasheetURI": "www.acmecomponents.com/abc678datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-10-26",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "fetType": "PFET",
+    "loadSwitchCount": 1,
+     "vinTyp":{
+        "siUnit": "volt",
+        "absoluteValue": 1.8,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vinMin":{
+        "siUnit": "volt",
+        "absoluteValue": 1.65,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vinMax":{
+        "siUnit": "volt",
+        "absoluteValue": 3.3,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+     "OutputCurrentMax":{
+        "siUnit": "amp",
+        "absoluteValue": 2,
+        "unitText": "A",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "oneResistanceTyp":{
+        "siUnit": "ohm",
+        "absoluteValue": 10,
+        "unitText": "mA",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "currentLimitSupport": true,
+    "powerGoodSupport": true,
+    "quickOutputDischargeSupport": true,
+    "reverseCurrentBlockingSupport": false,
+    "enableTimeTyp": {
+        "siUnit": "second",
+        "absoluteValue": 1,
+        "unitText": "s",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+     "offTimeTyp": {
+        "siUnit": "second",
+        "absoluteValue": 1,
+        "unitText": "ms",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "package": {
+        "length": 3,
+        "width": 3,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+     "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "VIN"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "VOUT"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "EN"
+        },
+          {
+            "terminalIdentifier": "5",
+            "name": "PWRGD"
+        }
+    ]
+}
+        
 ```
 
 Diode Example 
@@ -1356,6 +1540,398 @@ Microcontroller/EC Example - Limited pins
         {
             "terminalIdentifier": "6",
             "name": "gnd"
+        }
+    ]
+}
+```
+
+Display Backlight Driver Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "display backlight driver",
+        "manufacturer": "ACME Components",
+        "componentName": "abc100",
+        "orderableMPN": "abc100,45",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-12-23",
+            "datasheetURI": "www.acmecomponents.com/abc100datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-12-20",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "vinTyp":{
+        "siUnit": "volt",
+        "absoluteValue": 10,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vinMin":{
+        "siUnit": "volt",
+        "absoluteValue": 5,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+    "vinMax":{
+        "siUnit": "volt",
+        "absoluteValue": 24,
+        "unitText": "V",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+     "ioutMax":{
+        "siUnit": "amp",
+        "absoluteValue": 100,
+        "unitText": "mA",
+        "unitFactor": 1e-3,
+        "valueDefined": true
+    },
+    "currentMatchingAccuracyTyp":{
+        "siUnit": "percentage",
+        "absoluteValue": 1,
+         "unitText": "%",
+        "unitFactor": 1,
+        "valueDefined": true
+    },
+     "dimmingRatioTyp":[
+        {"numerator": 1000},
+        {"denominator": 1}
+     ],
+    "numberLEDStrings": 4,
+    "numberLEDPerString": 6,
+    "integratedBoost": true,
+    "fswMin":{
+        "siUnit": "hertz",
+        "absoluteValue": 500,
+        "unitText": "KHz",
+        "unitFactor": 1e3,
+        "valueDefined": true
+    },
+     "fswMax":{
+        "siUnit": "hertz",
+        "absoluteValue": 2,
+        "unitText": "MHz",
+        "unitFactor": 1e6,
+        "valueDefined": true
+    },
+      "package": {
+        "length": 5,
+        "width": 5,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "standardPackageType": "qfn",
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "VIN"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "OUT0"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "OUT1"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "OUT2"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "OUT3"
+        },
+        {
+            "terminalIdentifier": "6",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "7",
+            "name": "IREF"
+        },
+        {
+            "terminalIdentifier": "8",
+            "name": "VFB"
+        },
+        {
+            "terminalIdentifier": "9",
+            "name": "EN"
+        }
+    ]
+}
+       
+```
+
+PMIC Example - Limited pins 
+
+```json
+{
+    "componentID": {
+        "partType": "pmic",
+        "manufacturer": "ACME Components",
+        "componentName": "abc10",
+        "orderableMPN": "abc10,45",
+        "sourceDatasheetID": {
+            "publishedDate": "2021-11-23",
+            "datasheetURI": "www.acmecomponents.com/abc10datasheet"
+        },
+        "digitalDatasheetID": {
+            "publishedDate": "2022-03-21",
+            "guid": "3e4cd9de-657a-41ae-902e-beca95aff51d"
+        },
+        "status": "active"
+    },
+    "ldoRegulatorCount": 2,
+    "buckRegulatorCount": 2,
+    "componentList": [
+        "ldo",
+        "switching regulator"
+    ],
+    "instances": [
+        {
+            "componentTitle": "ldo",
+            "instanceName": "ldo1",
+            "instanceProperties": {
+                "vinMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 3,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "vinMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 5,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 1.62,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 1.98,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "maxLoadCurrent": {
+                    "siUnit": "amp",
+                    "absoluteValue": 1,
+                    "unitText": "A",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        },
+        {
+            "componentTitle": "ldo",
+            "instanceName": "ldo2",
+            "instanceProperties": {
+                "vinMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 2.8,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "vinMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 3.3,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 1.35,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 1.65,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "maxLoadCurrent": {
+                    "siUnit": "amp",
+                    "absoluteValue": 1,
+                    "unitText": "A",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        },
+        {
+            "componentTitle": "switching regulator",
+            "instanceName": "buck1",
+            "instanceProperty": {
+                "regulatorTopology": "buck",
+                "vinMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 10,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "vinMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 15,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 3.3,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 2.7,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "maxLoadCurrent": {
+                    "siUnit": "amp",
+                    "absoluteValue": 10,
+                    "unitText": "A",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        },
+        {
+            "componentTitle": "switching regulator",
+            "instanceName": "buck2",
+            "instanceProperty": {
+                "regulatorTopology": "buck",
+                "vinMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 10,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "vinMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 15,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMax": {
+                    "siUnit": "volt",
+                    "absoluteValue": 5.5,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "voutMin": {
+                    "siUnit": "volt",
+                    "absoluteValue": 4.5,
+                    "unitText": "V",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                },
+                "maxLoadCurrent": {
+                    "siUnit": "amp",
+                    "absoluteValue": 5,
+                    "unitText": "A",
+                    "unitFactor": 1,
+                    "valueDefined": true
+                }
+            }
+        }
+    ],
+    "package": {
+        "length": 10,
+        "width": 10,
+        "height": 1,
+        "dimensionUnit": "millimeter"
+    },
+    "pins": [
+        {
+            "terminalIdentifier": "1",
+            "name": "Vin_ldo1"
+        },
+        {
+            "terminalIdentifier": "2",
+            "name": "Vout_ldo1"
+        },
+        {
+            "terminalIdentifier": "3",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "4",
+            "name": "VFB_ldo1"
+        },
+        {
+            "terminalIdentifier": "5",
+            "name": "Vin_ldo2"
+        },
+        {
+            "terminalIdentifier": "6",
+            "name": "Vout_ldo2"
+        },
+        {
+            "terminalIdentifier": "7",
+            "name": "VFB_ldo2"
+        },
+        {
+            "terminalIdentifier": "8",
+            "name": "Vsw_buck1"
+        },
+        {
+            "terminalIdentifier": "9",
+            "name": "Vsw_buck2"
+        },
+        {
+            "terminalIdentifier": "10",
+            "name": "Vin_buck"
+        },
+        {
+            "terminalIdentifier": "11",
+            "name": "GND"
+        },
+        {
+            "terminalIdentifier": "12",
+            "name": "sda"
+        },
+        {
+            "terminalIdentifier": "13",
+            "name": "scl"
+        },
+        {
+            "terminalIdentifier": "14",
+            "name": "gpio1"
+        },
+        {
+            "terminalIdentifier": "15",
+            "name": "gpio2"
+        },
+        {
+            "terminalIdentifier": "16",
+            "name": "GND"
         }
     ]
 }
