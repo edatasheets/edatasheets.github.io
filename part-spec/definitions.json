@@ -417,8 +417,16 @@
           ],
           "type": "string"
         },
-        "absoluteValue": {
-          "description": "unit quantity corresponding to unit text - example 40mV would have a value of 40",
+        "typValue": {
+          "description": "typical unit quantity corresponding to unit text - example 40mV would have a value of 40",
+          "type": "number"
+        },
+        "minValue": {
+          "description": "minimum unit quantity corresponding to unit text - example 40mV would have a value of 40",
+          "type": "number"
+        },
+        "maxValue": {
+          "description": "maximum unit quantity corresponding to unit text - example 40mV would have a value of 40",
           "type": "number"
         },
         "unitText": {
@@ -455,31 +463,62 @@
         }
       }
     },
+    "value": {
+      "type": "object",
+      "properties": {
+        "typValue": {
+          "description": "typical value",
+          "type": "number"
+        },
+        "minValue": {
+          "description": "minimum value",
+          "type": "number"
+        },
+        "maxValue": {
+          "description": "maximum value",
+          "type": "number"
+        }
+      }
+    },
     "package": {
       "type": "object",
       "properties": {
         "length": {
           "description": "length of a side of a package",
-          "type": "number"
+          "$comment": "units of millimeter",
+          "$ref": "#/$definitions/unit"
         },
         "width": {
           "description": "width of a side of a package",
-          "type": "number"
+          "$comment": "units of millimeter",
+          "$ref": "#/$definitions/unit"
         },
         "height": {
           "description": "height of a package",
-          "type": "number"
+          "$comment": "units of millimeter",
+          "$ref": "#/$definitions/unit"
         },
-        "dimensionUnit": {
-          "description": "unit used to describe package dimensions",
-          "enum": [
-            "mils",
-            "millimeter"
-          ]
+        "nominalFootprints": {
+          "description": "references to external footprints in standard CAD formats",
+          "type": "array",
+          "items": {
+            "$ref": "#/$definitions/externalFile"
+          }
+        },
+        "breakoutExamples": {
+          "description": "references to external board file that contains layout breakout example",
+          "type": "array",
+          "items": {
+            "$ref": "#/$definitions/externalFile"
+          }
+        },
+        "partModelInformation": {
+          "description": "reference to an external XML file that contains a part model in IPC/DAC2552 format",
+          "$ref": "#/$definitions/externalFile"
         },
         "standardPackageSize": {
           "description": "name of standard package size (imperial)",
-          "enum": [
+          "example": [
             "0201",
             "0402",
             "0603",
@@ -498,19 +537,61 @@
         }
       }
     },
-    "ratio":{
-    "type": "object",
-    "properties": {
-      "numerator":{
-        "description": "numerator of ratio",
-        "type": "number"
-      },
-      "denominator":{ 
-        "description": "denominator of ratio",
-        "type": "number"
+    "externalFile": {
+      "type": "object",
+      "properties": {
+        "fileDescription": {
+          "description": "text description of the contents of an external file (or files)",
+          "type": "string"
+        },
+        "companionSoftware": {
+          "description": "optional, name of software program used to access file",
+          "type": "string"
+        },
+        "standardReferenced": {
+          "description": "optional, name of the standard the file is written in",
+          "type": "string"
+        },
+        "fileExtension": {
+          "description": "type of file referenced by link",
+          "examples": [
+            "brd",
+            "mod"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fileName": {
+          "description": "name of external file within the zipped datasheet package",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fileURI": {
+          "description": "URI linking to the CAD file",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  },
+    },
+    "ratio": {
+      "type": "object",
+      "properties": {
+        "numerator": {
+          "description": "numerator of ratio",
+          "type": "number"
+        },
+        "denominator": {
+          "description": "denominator of ratio",
+          "type": "number"
+        }
+      }
+    },
     "conditionalProperty": {
       "type": "object",
       "properties": {
@@ -521,7 +602,9 @@
         "conditions": {
           "description": "conditions under which the property is measured",
           "type": "array",
-          "items": "string"
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -532,78 +615,28 @@
           "description": "Name of the power supply ",
           "type": "string"
         },
-        "quiescentCurrentTyp": {
-          "description": "typical quiescent current (Iq) of a device",
+        "quiescentCurrent": {
+          "description": "quiescent current (Iq) of a device",
           "comment": "units of amps",
           "$ref": "definitions.json#/unit"
         },
-        "quiescentCurrentMax": {
-          "description": "maximum quiescent current (Iq) of a device",
+        "shutdownCurrent": {
+          "description": "shutdown current (Isd) of a device",
           "comment": "units of amps",
           "$ref": "definitions.json#/unit"
         },
-        "quiescentCurrentMin": {
-          "description": "minimum quiescent current (Iq) of a device",
+        "activeCurrent": {
+          "description": "current consumption when a device is in active mode",
           "comment": "units of amps",
           "$ref": "definitions.json#/unit"
         },
-        "shutdownCurrentTyp": {
-          "description": "typical shutdown current (Isd) of a device",
+        "sleepCurrent": {
+          "description": "current consumption when a device is in sleep mode",
           "comment": "units of amps",
           "$ref": "definitions.json#/unit"
         },
-        "shutdownCurrentMax": {
-          "description": "maximum shutdown current (Isd) of a device",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "shutdownCurrentMin": {
-          "description": "minimum shutdown current (Isd) of a device",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "activeCurrentTyp": {
-          "description": "typical current consumption when a device is in active mode",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "activeCurrentMax": {
-          "description": "maximum current consumption when a device is in active mode",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "activeCurrentMin": {
-          "description": "minimum current consumption when a device is in active mode",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "sleepCurrentTyp": {
-          "description": "typical current consumption when a device is in sleep mode",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "sleepCurrentMax": {
-          "description": "maximum current consumption when a device is in sleep mode",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "sleepCurrentMin": {
-          "description": "minimum current consumption when a device is in sleep mode",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "idleCurrentTyp": {
-          "description": "typical current consumption when a device is in idle mode",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "idleCurrentMax": {
-          "description": "maximum current consumption when a device is in idle mode",
-          "comment": "units of amps",
-          "$ref": "definitions.json#/unit"
-        },
-        "idleCurrentMin": {
-          "description": "minimum current consumption when a device is in idle mode",
+        "idleCurrent": {
+          "description": "current consumption when a device is in idle mode",
           "comment": "units of amps",
           "$ref": "definitions.json#/unit"
         }
@@ -629,37 +662,40 @@
         },
         "powerSupplyProtection": {
           "description": "undervoltage lockout, overvoltage protection thresholds of a supply",
-          "$ref": "#/defs/powerSupplyProtection"
+          "type": "array",
+          "items": {
+            "$ref": "#/defs/powerSupplyProtection"
+          }
         }
       }
-    },
-    "powerSupplyProtection": {
-      "type": "object",
-      "properties": {
-        "SupplyName": {
-          "description": "Name of the supply monitored",
-          "type": "string"
-        },
-        "OvervoltageProtectionThresholdRising": {
-          "description": "Overvoltage Protection (OVP) Threshold with monitored supply rising",
-          "comment": "units of volts",
-          "$ref": "definitions.json#/unit"
-        },
-        "OvervoltageProtectionThresholdFalling": {
-          "description": "Overvoltage Protection (OVP) Threshold with monitored supply falling",
-          "comment": "units of volts",
-          "$ref": "definitions.json#/unit"
-        },
-        "UndervoltageLockoutThresholdRising": {
-          "description": "Undervoltage Lockout Out (UVLO) Threshold with monitored supply rising",
-          "comment": "units of volts",
-          "$ref": "definitions.json#/unit"
-        },
-        "UndervoltageLockoutThresholdFalling": {
-          "description": "Undervoltage Lockout Out (UVLO) Threshold with monitored supply Falling",
-          "comment": "units of volts",
-          "$ref": "definitions.json#/unit"
-        }
+    }
+  },
+  "powerSupplyProtection": {
+    "type": "object",
+    "properties": {
+      "supplyName": {
+        "description": "Name of the supply monitored",
+        "type": "string"
+      },
+      "overvoltageProtectionThresholdRising": {
+        "description": "Overvoltage Protection (OVP) Threshold with monitored supply rising",
+        "comment": "units of volts",
+        "$ref": "definitions.json#/unit"
+      },
+      "overvoltageProtectionThresholdFalling": {
+        "description": "Overvoltage Protection (OVP) Threshold with monitored supply falling",
+        "comment": "units of volts",
+        "$ref": "definitions.json#/unit"
+      },
+      "undervoltageLockoutThresholdRising": {
+        "description": "Undervoltage Lockout Out (UVLO) Threshold with monitored supply rising",
+        "comment": "units of volts",
+        "$ref": "definitions.json#/unit"
+      },
+      "undervoltageLockoutThresholdFalling": {
+        "description": "Undervoltage Lockout Out (UVLO) Threshold with monitored supply Falling",
+        "comment": "units of volts",
+        "$ref": "definitions.json#/unit"
       }
     }
   }
