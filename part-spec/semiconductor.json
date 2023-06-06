@@ -73,18 +73,13 @@
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                 "vgsThMin": {
+                "vgsThMin": {
                     "description": "minimum gate to source voltage difference required to produce a conducting path between drain and source.",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "vsdDiodeVfTyp": {
-                    "description": "typical reverse diode forward voltage when a MOSFET is in off-state.",
-                    "comment": "units of volts",
-                    "$ref": "definitions.json#/unit"
-                },
-                 "vsdDiodeVfMax": {
-                    "description": "maximum reverse diode forward voltage when a MOSFET is in off-state.",
+                "vsdDiodeVf": {
+                    "description": "reverse diode forward voltage when a MOSFET is in off-state.",
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
@@ -128,95 +123,50 @@
                     "$comment": "conditions include vds, iDrain",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "rdsonTyp": {
-                    "description": "typical on-state resistance of a MOSFET.",
+                "rdson": {
+                    "description": "on-state resistance of a MOSFET.",
                     "$comment": "conditions include vds, vgs, temperature",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "rdsonMax": {
-                    "description": "maximum on-state resistance of a MOSFET.",
+                "rg": {
+                    "description": "internal gate resistance of a MOSFET.",
                     "$comment": "conditions include vds, vgs, temperature",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                 "rgTyp": {
-                    "description": "typical internal gate resistance of a MOSFET.",
-                    "$comment": "conditions include vds, vgs, temperature",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "rgMax": {
-                    "description": "maximum internal gate resistance of a MOSFET.",
-                    "$comment": "conditions include vds, vgs, temperature",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                 "cissTyp": {
-                    "description": "typical input capacitance of a MOSFET.",
+                "ciss": {
+                    "description": "input capacitance of a MOSFET.",
                     "$comment": "conditions include vds, vgs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "cissMax": {
-                    "description": "maximum input capacitance of a MOSFET.",
+                "coss": {
+                    "description": "output capacitance of a MOSFET.",
                     "$comment": "conditions include vds, vgs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "cossTyp": {
-                    "description": "typical output capacitance of a MOSFET.",
+                "crss": {
+                    "description": "reverse transfer capacitance of a MOSFET.",
                     "$comment": "conditions include vds, vgs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "cossMax": {
-                    "description": "maximum output capacitance of a MOSFET.",
-                    "$comment": "conditions include vds, vgs",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "crssTyp": {
-                    "description": "typical reverse transfer capacitance of a MOSFET.",
-                    "$comment": "conditions include vds, vgs",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "crssMax": {
-                    "description": "maximum reverse transfer capacitance of a MOSFET.",
-                    "$comment": "conditions include vds, vgs",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "qgTyp": {
-                    "description": "typical total gate charge of a MOSFET.",
+                "qg": {
+                    "description": "total gate charge of a MOSFET.",
                     "$comment": "conditions include drain-source voltage and drain current",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "qgMax": {
-                    "description": "maximum total gate charge of a MOSFET.",
-                    "$comment": "conditions include drain-source voltage and drain current",
-                    "$ref": "definitions.json#/conditionalProperty"
-                }, 
-                "qgdTyp": {
-                    "description": "typical gate to drain charge of a MOSFET.",
-                    "$comment": "conditions include drain-source voltage and drain current",
-                    "$ref": "definitions.json#/conditionalProperty"  
-                },
-                "qgdMax": {
-                    "description": "maximum gate to drain charge of a MOSFET.",
-                    "$comment": "conditions include drain-source voltage and drain current",
-                    "$ref": "definitions.json#/conditionalProperty"  
-                },
-                "qgsTyp": {
-                    "description": "typical gate to source charge of a MOSFET.",
+                "qgd": {
+                    "description": "gate to drain charge of a MOSFET.",
                     "$comment": "conditions include drain-source voltage and drain current",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "qgsMax": {
-                    "description": "maximum gate to source charge of a MOSFET.",
+                "qgs": {
+                    "description": "gate to source charge of a MOSFET.",
                     "$comment": "conditions include drain-source voltage and drain current",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "qrrTyp": {
-                    "description": "typical reverse recovery charge of the body diode of a MOSFET.",
+                "qrr": {
+                    "description": "reverse recovery charge of the body diode of a MOSFET.",
                     "$comment": "conditions include diode forward current",
-                    "$ref": "definitions.json#/conditionalProperty" 
-                },
-                "qrrMax": {
-                    "description": "maximum reverse recovery charge of the body diode of a MOSFET.",
-                    "$comment": "conditions include diode forward current",
-                    "$ref": "definitions.json#/conditionalProperty" 
+                    "$ref": "definitions.json#/conditionalProperty"
                 },
                 "idVsVds": {
                     "description": "graph of drain current (iD) vs drain source voltage (vds).",
@@ -226,53 +176,28 @@
                     "description": "graph of drain current (iD) vs gate source voltage (vgs).",
                     "$ref": "graph.json#/graphDefiniton"
                 },
-                "tdONTyp": {
-                    "description": "typical turn-on delay time of a MOSFET",
+                "tdON": {
+                    "description": "turn-on delay time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "tdONMax": {
-                    "description": "maximum turn-on delay time of a MOSFET",
+                "tdOFF": {
+                    "description": "turn-off delay time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "tdOFFTyp": {
-                    "description": "typical turn-off delay time of a MOSFET",
+                "riseTime": {
+                    "description": "rise time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "tdOFFMax": {
-                    "description": "maximum turn-off delay time of a MOSFET",
+                "fallTime": {
+                    "description": "fall time of a MOSFET",
                     "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "riseTimeTyp": {
-                    "description": "typical rise time of a MOSFET",
-                    "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "riseTimeMax": {
-                    "description": "maximum rise time of a MOSFET",
-                    "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "fallTimeTyp": {
-                    "description": "typical fall time of a MOSFET",
-                    "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "fallTimeMax": {
-                    "description": "maximum fall time of a MOSFET",
-                    "$comment": "conditions include drain-source voltage (Vds), gate-source voltage (Vgs), load value.",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "trrTyp": {
-                    "description": "typical reverse recovery time of the body diode of a MOSFET.",
-                    "$comment": "conditions include body diode forward current value and ramp rate.",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "trrMax": {
-                    "description": "maximum reverse recovery time of the body diode of a MOSFET.",
+                "trr": {
+                    "description": "reverse recovery time of the body diode of a MOSFET.",
                     "$comment": "conditions include body diode forward current value and ramp rate.",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
@@ -298,7 +223,6 @@
                 }
             }
         },
-            
         {
             "title": "diode",
             "type": "object",
@@ -334,22 +258,12 @@
                     ],
                     "type": "string"
                 },
-                 "numberOfProtectedLines": {
+                "numberOfProtectedLines": {
                     "description": "number of lines a diode can protect",
                     "type": "number"
                 },
-                "vfTyp": {
-                    "description": "typical forward voltage of a diode",
-                    "comment": "conditions include: forward current of diode under which a given forward voltage was measured",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "vfMax": {
-                    "description": "maximum forward voltage of a diode",
-                    "comment": "conditions include: forward current of diode under which a given forward voltage was measured",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "vfMin": {
-                    "description": "minimum forward voltage of a diode",
+                "vf": {
+                    "description": "forward voltage of a diode",
                     "comment": "conditions include: forward current of diode under which a given forward voltage was measured",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
@@ -378,28 +292,13 @@
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "irTyp": {
-                    "description": "typical reverse current",
+                "ir": {
+                    "description": "reverse current",
                     "comment": "conditions include: reverse bias voltage under which reverse leakage current occurs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
-                "irMax": {
-                    "description": "maximum reverse current",
-                    "comment": "conditions include: reverse bias voltage under which reverse leakage current occurs",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "vzTyp": {
-                    "description": "typical breakdown voltage of a zener diode",
-                    "comment": "conditions include: minimum reverse current condition under which breakdown voltage of a zener diode is achieved",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "vzMax": {
-                    "description": "maximum breakdown voltage of a zener diode",
-                    "comment": "conditions include: minimum reverse current condition under which breakdown voltage of a zener diode is achieved",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "vzMin": {
-                    "description": "minimum breakdown voltage of a zener diode",
+                "vz": {
+                    "description": "breakdown voltage of a zener diode",
                     "comment": "conditions include: minimum reverse current condition under which breakdown voltage of a zener diode is achieved",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
@@ -408,18 +307,8 @@
                     "comment": "units of volts",
                     "$ref": "definitions.json#/unit"
                 },
-                "vclTyp": {
-                    "description": "typical clamping voltage of a tvs diode",
-                    "comment": "conditions include: surge current condition under which a tvs clamping voltage occurs",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "vclMax": {
-                    "description": "maximum clamping voltage of a tvs diode",
-                    "comment": "conditions include: surge current condition under which a tvs clamping voltage occurs",
-                    "$ref": "definitions.json#/conditionalProperty"
-                },
-                "vclMin": {
-                    "description": "minimum clamping voltage of a tvs diode",
+                "vcl": {
+                    "description": "clamping voltage of a tvs diode",
                     "comment": "conditions include: surge current condition under which a tvs clamping voltage occurs",
                     "$ref": "definitions.json#/conditionalProperty"
                 },
@@ -462,6 +351,154 @@
                     "items": {
                         "$ref": "definitions.json#/pinSpec"
                     }
+                }
+            }
+        },
+        {
+            "title": "bjt",
+            "type": "object",
+            "required": [
+                "componentID",
+                "channel"
+            ],
+            "properties": {
+                "componentID": {
+                    "description": "common component identifying information, such as mpn.",
+                    "$ref": "definitions.json#/componentID"
+                },
+                "bjtChannelType": {
+                    "description": "doping of a transistor's channel - describes whether a transistor is n-type or p-type.",
+                    "enum": [
+                        "nType",
+                        "pType",
+                        "nAndpType"
+                    ],
+                    "type": "string"
+                },
+                "transistorCount": {
+                    "description": "number of transistors in the package.",
+                    "type": "number"
+                },
+                "collectorCurrent": {
+                    "description": "maximum current flow of BJT as measured at the collector (Icc)",
+                    "$comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "peakCollectorCurrent": {
+                    "description": "maximum pulsed current flow of BJT as measured at the collector (Icm)",
+                    "$comment": "units of amps",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "baseCurrent": {
+                    "description": "maximum current flow of BJT as measured at the base (Ib)",
+                    "$comment": "units of amps",
+                    "$ref": "definitions.json#/unit"
+                },
+                "peakBaseCurrent": {
+                    "description": "maximum pulsed current flow of BJT as measured at the base (Ibm)",
+                    "$comment": "units of amps",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "collectorBaseVoltage": {
+                    "description": "maximum voltage between collector and base terminals of BJT with an open emitter terminal (V_CBO)",
+                    "$comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "collectorEmitterVoltage": {
+                    "description": "maximum voltage between collector and emitter terminals of BJT with an open base terminal (V_CEO)",
+                    "$comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "emitterBaseVoltage": {
+                    "description": "maximum voltage between emitter and base terminals of BJT with an open collector terminal (V_EBO)",
+                    "$comment": "units of volts",
+                    "$ref": "definitions.json#/unit"
+                },
+                "totalPowerDissipation": {
+                    "description": "maximum power that can be continously dissipated under temperature conditions",
+                    "$comment": "units of watts",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "collectorBaseCutOffCurrent": {
+                    "description": "current into the collector terminal when the BJT's base and collector are reverse biased and the emitter is open (I_CBO)",
+                    "$comment": "units of amps",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "emitterBaseCutOffCurrent": {
+                    "description": "current into the base terminal when the BJT's base and emitter are reverse biased and the collector is open (I_EBO)",
+                    "$comment": "units of amps",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "dcGain": {
+                    "description": "ratio of collector current to base current (hfe)",
+                    "$comment": "units of number",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "collectorEmitterSaturationVoltage": {
+                    "description": "collector-emitter voltage below which a change in base current does not impact collector current (VCE_SAT)",
+                    "$comment": "units of volts",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "baseEmitterSaturationVoltage": {
+                    "description": "base-emitter voltage required to ensure the collector is forward biased for certain current conditions (VBE_SAT)",
+                    "$comment": "units of volts",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "collectorEmitterBreakdownVoltage": {
+                    "description": "collector-emitter voltage at which a specified current flows with the base open",
+                    "$comment": "units of volts",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "baseEmitterBreakdownVoltage": {
+                    "description": "base-emitter voltage at which a specified current flows with the collector open",
+                    "$comment": "units of volts",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "delayTime": {
+                    "description": "time delay between input signal rising and when collector current rises to 10% of Isat (td)",
+                    "$comment": "units of seconds",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "riseTime": {
+                    "description": "time for collector current to rise through active region from 10% to 90% of Isat (tr)",
+                    "$comment": "units of seconds",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "storageTime": {
+                    "description": "time delay between input signal falling and when collector current falls to 90% of Isat (ts)",
+                    "$comment": "units of seconds",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "fallTime": {
+                    "description": "time for collector current to fall from 90% to 10% of Isat (tf)",
+                    "$comment": "units of seconds",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "collectorCapacitance": {
+                    "description": "parasitic capacitance of collector terminal under certain conditions (Cc)",
+                    "$comment": "units of farads",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "emitterCapacitance": {
+                    "description": "parasitic capacitance of emitter terminal under certain conditions (Ce)",
+                    "$comment": "units of farads",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "transitionFrequency": {
+                    "description": "frequency of unity current gain with a short circuit output (ft)",
+                    "$comment": "units of hertz",
+                    "$ref": "definitions.json#/conditionalProperty"
+                },
+                "pins": {
+                    "description": "array of pin objects with associated properties",
+                    "type": "array",
+                    "items": {
+                        "$ref": "definitions.json#/pinSpec"
+                    }
+                },
+                "package": {
+                    "description": "component's package size and description",
+                    "$ref": "definitions.json#/package"
                 }
             }
         }
