@@ -1,0 +1,26 @@
+{
+    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_misc/tpm.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "specification of tpm",
+    "tpm": {
+        "type": "object",
+        "properties": {
+            "interface": {
+                "description": "describes the communication interface from the chip to the host",
+                "examples": [
+                    "spi",
+                    "i2c",
+                    "lpc"
+                ],
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "$ref": "..common/currentConsumption.json#/currentConsumption"
+            }
+        }
+    }
+}
