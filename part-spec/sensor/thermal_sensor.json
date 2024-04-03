@@ -4,7 +4,17 @@
     "title": "specification of thermal sensor",
     "thermal_sensor": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "thermal_sensor"
+                ],
+                "type": "string"
+            },
             "sensingTechnology": {
                 "description": "method by which temperature is detected",
                 "examples": [
@@ -37,12 +47,12 @@
             "accuracy": {
                 "description": "accuracy of temperature sensor",
                 "comment": "units of degrees C",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "temperatureRange": {
                 "description": "range of temperature sensor",
                 "comment": "units of degrees C",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "resolution": {
                 "description": "maximum resolution of temperature sensor",
@@ -55,9 +65,13 @@
                 "type": "number"
             },
             "currentConsumption": {
-                "description": "current consumption of a device",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

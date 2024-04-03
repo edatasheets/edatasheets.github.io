@@ -5,11 +5,19 @@
     "eeprom": {
         "type": "object",
         "required": [
-            "capacity"
+            "capacity",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "eeprom"
+                ],
+                "type": "string"
+            },
             "accessTime": {
-                "$ref": "../common/unit.json#/unit",
+                "$ref": "../common/values.json#/valueOptions",
                 "comment": "units of seconds (s)",
                 "description": "time to access the eeprom"
             },
@@ -18,24 +26,26 @@
                 "type": "number"
             },
             "bootBlockSize": {
-                "$ref": "../common/unit.json#/unit",
+                "$ref": "../common/values.json#/valueOptions",
                 "comment": "units of bits",
                 "description": "size of the eeprom boot block"
             },
             "capacity": {
-                "$ref": "../common/unit.json#/unit",
+                "$ref": "../common/values.json#/valueOptions",
                 "comment": "units of bits",
                 "description": "capacity/density of eeprom"
             },
             "clockFrequency": {
-                "$ref": "../common/unit.json#/unit",
+                "$ref": "../common/values.json#/valueOptions",
                 "comment": "units of Hertz (Hz)",
                 "description": "eeprom clock frequency"
             },
             "currentConsumption": {
-                "$ref": "../common/currentConsumption.json#/currentConsumption",
-                "comment": "units of amps",
-                "description": "current consumption of a device"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             },
             "dataRetention": {
                 "description": "maximum number of read and write cycle the part can support",
@@ -58,6 +68,7 @@
                 "description": "number of rows in the eeprom",
                 "type": "number"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

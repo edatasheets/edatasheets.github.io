@@ -5,26 +5,47 @@
     "powerFetProperties": {
         "type": "object",
         "properties": {
-            "ilimHSFET": {
-                "description": "maximum sustained output current under which the high side FET will operate properly",
-                "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+            "singlePowerFetPair": {
+                "description": "single pair of power fets (typical in buck or boost configuration)",
+                "$ref": "#/$defs/powerFetPair"
             },
-            "ilimLSFET": {
-                "description": "maximum sustained output current under which the low side FET will operate properly",
-                "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+            "inputPowerFetPair": {
+                "description": "input power fet pair (in a buck-boost configuration)",
+                "$ref": "#/$defs/powerFetPair"
             },
-            "rdsonHSFET": {
-                "description": "high side FET on-resistance",
-                "comment": "units of ohms",
-                "$ref": "../common/unit.json#/unit"
-            },
-            "rdsonLSFET": {
-                "description": "low side FET on-resistance",
-                "comment": "units of ohms",
-                "$ref": "../common/unit.json#/unit"
+            "outputPowerFetPair": {
+                "description": "output power fet pair (in a buck-boost configuration)",
+                "$ref": "#/$defs/powerFetPair"
             }
+        },
+        "additionalProperties": false
+    },
+    "$defs": {
+        "powerFetPair": {
+            "type": "object",
+            "properties": {
+                "ilimHSFET": {
+                    "description": "maximum sustained output current under which the high side FET will operate properly",
+                    "comment": "units of amps",
+                    "$ref": "../common/values.json#/valueOptions"
+                },
+                "ilimLSFET": {
+                    "description": "maximum sustained output current under which the low side FET will operate properly",
+                    "comment": "units of amps",
+                    "$ref": "../common/values.json#/valueOptions"
+                },
+                "rdsonHSFET": {
+                    "description": "high side FET on-resistance",
+                    "comment": "units of ohms",
+                    "$ref": "../common/values.json#/valueOptions"
+                },
+                "rdsonLSFET": {
+                    "description": "low side FET on-resistance",
+                    "comment": "units of ohms",
+                    "$ref": "../common/values.json#/valueOptions"
+                }
+            },
+            "additionalProperties": false
         }
     }
 }

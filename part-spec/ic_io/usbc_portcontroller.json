@@ -5,9 +5,17 @@
     "usbc_portcontroller": {
         "type": "object",
         "required": [
-            "pdVersion"
+            "pdVersion",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "usbc_portcontroller"
+                ],
+                "type": "string"
+            },
             "pdVersion": {
                 "description": "version of power delivery spec implemented by controller",
                 "examples": [
@@ -52,22 +60,22 @@
             "vconnFetOnResistance": {
                 "description": "on-resistance of the integrated Vconn FET",
                 "comment": "units of ohms",
-                "$ref": "..common/unit.json#/unit"
+                "$ref": "..common/values.json#/valueOptions"
             },
             "vconnPowerLimit": {
                 "description": "power limit supported by internal vconn switch (if supported)",
                 "comment": "units of watts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vconnMaxCurrent": {
                 "description": "maximum continuous current supported by internal vconn switch (if supported)",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vconnOverCurrentLimit": {
                 "description": "over current limit supported by internal vconn switch (if supported)",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "integratedVbusDischargeSwitch": {
                 "description": "whether the port controller has one or more integrated vbus discharge switches ",
@@ -88,12 +96,16 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             },
             "componentProtectionThresholds": {
                 "description": "thermal and power supply protection thresholds of a device",
                 "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

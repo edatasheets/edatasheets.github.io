@@ -4,7 +4,17 @@
     "title": "specification of magnetic sensor",
     "magnetic_sensor": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "magnetic_sensor"
+                ],
+                "type": "string"
+            },
             "magneticSensingTechnology": {
                 "description": "method by which magnetism is detected",
                 "examples": [
@@ -24,12 +34,12 @@
             "quiescentOutput": {
                 "description": "output of the magnetic sensor when no magnet is present",
                 "comment": "units of volts(v)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputVoltageLinearRange": {
                 "description": "output voltage range over which the magnetic flux density response is linear",
                 "comment": "lower value of the range captured by min value and top value of the range captured by max value (V) ",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "linearMagneticSensingRange": {
                 "description": "magnetic flux density range over which the output voltage is linear ",
@@ -67,12 +77,16 @@
             "bandwidth": {
                 "description": "sensing bandwidth",
                 "comment": "units of Hertz (Hz)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
-                "description": "current consumption of a device",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

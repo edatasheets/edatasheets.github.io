@@ -72,7 +72,8 @@
                     "type": "string"
                 }
             }
-        }
+        },
+        "additionalProperties": false
     },
     "$defs": {
         "sourceDatasheetID": {
@@ -99,11 +100,19 @@
         },
         "digitalDatasheetID": {
             "type": "object",
+            "required": [
+                "eDatasheetSpecRevision"
+            ],
             "properties": {
                 "publishedDate": {
                     "description": "date the digital datasheet was published",
                     "example": "2022-03-31",
                     "type": "string"
+                },
+                "eDatasheetSpecRevision": {
+                    "description": "revision of the digital datasheet specifications used to create the digital datasheet",
+                    "type": "string",
+                    "enum": ["1.0"]
                 },
                 "guid": {
                     "description": "vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify digital datasheet version",

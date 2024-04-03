@@ -4,21 +4,31 @@
     "title": "specification of microcontroller/ec",
     "microcontroller": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "microcontroller"
+                ],
+                "type": "string"
+            },
             "onChipFlash": {
                 "description": "capacity of built-in flash in a microprocessor",
                 "comment": "units of kilobytes",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "onChipRAM": {
                 "description": "capacity of built-in RAM in a microprocessor",
                 "comment": "units of kilobytes",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "onChipROM": {
                 "description": "capacity of built-in ROM in a microprocessor",
                 "comment": "units of kilobytes",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "coreProcessor": {
                 "description": "description of core processor",
@@ -37,7 +47,7 @@
             "clockSpeed": {
                 "description": "speed of main CPU clock",
                 "comment": "units of hertz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "firmwareVersion": {
                 "description": "firmware version of the part",
@@ -45,8 +55,12 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
