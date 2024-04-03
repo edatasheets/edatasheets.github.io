@@ -1,10 +1,20 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_misc/speaker_amplifier.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/speaker_amplifier.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of speaker amplifier",
     "speaker_amplifier": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "speaker_amplifier"
+                ],
+                "type": "string"
+            },
             "dataLength": {
                 "description": "number of bits in a data word",
                 "type": "number"
@@ -12,22 +22,22 @@
             "outputPower": {
                 "description": "typical output power from speaker amplifier",
                 "comment": "conditions include: voltage and load conditions under which output power is measured",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "efficiency": {
                 "description": "typical speaker amplifier efficiency",
                 "comment": "conditions include: load and THD+N conditions under which efficiency is measured",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "thd+n": {
                 "description": "typical total harmonic distortion plus noise of amplifier",
                 "comment": "conditions include: frequency, power, and load conditions under which thd+n is measured",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "sampleRate": {
                 "description": "sample rate of data out of amplifier",
                 "comment": "units of Hz",
-                "$ref": "..common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "interface": {
                 "description": "describes the communication interface from the chip to the host",
@@ -40,8 +50,12 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "..common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

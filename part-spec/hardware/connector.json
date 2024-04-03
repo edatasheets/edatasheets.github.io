@@ -1,13 +1,21 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/hardware/connector.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/hardware/connector.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of connector",
     "connector": {
         "type": "object",
         "required": [
-            "contactCount"
+            "contactCount",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "connector"
+                ],
+                "type": "string"
+            },
             "function": {
                 "description": "intended function of a connector",
                 "examples": [
@@ -40,12 +48,13 @@
             "pitch": {
                 "description": "distance from the center of one contact on the connector to the center of the next contact",
                 "comment": "units of mm",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "keying": {
                 "description": "property describing whether a connector has an asymmetry to prevent it from being plugged in the wrong direction",
                 "type": "boolean"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

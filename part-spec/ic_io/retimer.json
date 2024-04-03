@@ -1,10 +1,20 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/retimer.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/retimer.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of retimer",
     "retimer": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "retimer"
+                ],
+                "type": "string"
+            },
             "numberOfLanes": {
                 "description": "number of lanes (single ended or differential) supported by a device",
                 "type": "number"
@@ -38,7 +48,7 @@
             "maxDataRate": {
                 "description": "maximum data rate supported by a device",
                 "comment": "units of Hz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "integratedAuxLsSwitch": {
                 "description": "whether the AUX/LSx switch for SBU is integrated",
@@ -49,17 +59,21 @@
                 "type": "boolean"
             },
             "sris": {
-                "description": "whether a device supports Seperate Reference clock with Independent Spread spectrum clocking(SRIS)",
+                "description": "whether a device supports Separate Reference clock with Independent Spread spectrum clocking(SRIS)",
                 "type": "boolean"
             },
             "srns": {
-                "description": "whether a device supports Seperate Reference clock with No Spread spectrum clocking (SRNS)",
+                "description": "whether a device supports Separate Reference clock with No Spread spectrum clocking (SRNS)",
                 "type": "boolean"
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/power/load_switch.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/load_switch.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of load switch",
     "load_switch": {
@@ -7,9 +7,17 @@
         "required": [
             "vin",
             "outputCurrent",
-            "onResistance"
+            "onResistance",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "load_switch"
+                ],
+                "type": "string"
+            },    
             "fetType": {
                 "description": "type of pass FET in a device",
                 "enum": [
@@ -23,24 +31,24 @@
                 "type": "number"
             },
             "vin": {
-                "description": "input voltage under which a device can be expected to reliabily operate",
+                "description": "input voltage under which a device can be expected to reliably operate",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputCurrent": {
-                "description": "continuous DC cuurent supported by a device",
+                "description": "continuous DC current supported by a device",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "onResistance": {
                 "description": "on state resistance of FET",
                 "comment": "conditions includes vin and output current",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "pullDownResistance": {
                 "description": "pull-down resistance of a device from the output to the ground",
                 "comment": "units of ohms",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentLimitSupport": {
                 "description": "whether a device supports current limiting",
@@ -65,31 +73,35 @@
             "enableTime": {
                 "description": "time between enable asserted and output voltage rising to 10% nominal",
                 "comment": "conditions include output capacitor value, vin",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "offTime": {
                 "description": "time between enable deasserted and output voltage falling to 90% nominal",
                 "comment": "conditions include output capacitor value, vin",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "rampTime": {
                 "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
                 "comment": "conditions include output capacitor value, vin",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "fallTime": {
                 "description": "time for output voltage to go from 90% vout nominal to 10% vout nominal",
                 "comment": "conditions include output capacitor value, current output, and vin",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
-                "description": "current consumption of a device",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             },
             "componentProtectionThresholds": {
                 "description": "thermal and power supply protection thresholds of a device",
                 "$ref": "../common/componentProtectionThresholds.json#/componentProtectionThresholds"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

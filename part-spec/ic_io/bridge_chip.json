@@ -1,10 +1,20 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/bridge_chip.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/bridge_chip.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of bridge chip",
     "bridge_chip": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "bridge_chip"
+                ],
+                "type": "string"
+            },
             "muxRatio": {
                 "description": "ratio of inputs to outputs",
                 "examples": [
@@ -37,8 +47,12 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

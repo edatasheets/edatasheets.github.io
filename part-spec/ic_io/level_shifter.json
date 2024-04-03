@@ -1,24 +1,38 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/level_shifter.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/level_shifter.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of level shifter",
     "level_shifter": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "level_shifter"
+                ],
+                "type": "string"
+            },
             "inputVoltage": {
                 "description": "nominal input voltage of level shifter",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputVoltage": {
                 "description": "nominal output voltage of level shifter",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

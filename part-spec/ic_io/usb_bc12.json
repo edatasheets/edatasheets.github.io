@@ -1,14 +1,22 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/usb_bc12.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usb_bc12.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of USB battery charging 1.2 (bc12) detector",
     "usb_bc12": {
         "type": "object",
         "required": [
             "hostMode",
-            "deviceMode"
+            "deviceMode",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "usb_bc12"
+                ],
+                "type": "string"
+            },
             "hostMode": {
                 "description": "whether host mode is supported by bc12 chip",
                 "type": "boolean"
@@ -16,7 +24,15 @@
             "deviceMode": {
                 "description": "whether device mode is supported by bc12 chip",
                 "type": "boolean"
+            },
+            "currentConsumption": {
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

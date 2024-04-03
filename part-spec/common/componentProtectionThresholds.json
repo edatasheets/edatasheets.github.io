@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/componentProtectionThresholds.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/componentProtectionThresholds.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification to capture protection thresholds data of a component",
     "componentProtectionThresholds": {
@@ -8,17 +8,17 @@
             "thermalShutdownThresholdRising": {
                 "description": "thermal Shutdown (tsd) Threshold with temperature rising",
                 "comment": "units of celsius",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "thermalShutdownThresholdFalling": {
                 "description": "thermal Shutdown (tsd) Threshold with temperature falling",
                 "comment": "units of celsius",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "thermalShutdownHysteresis": {
                 "description": "thermal Shutdown (tsd) Hysteresis",
                 "comment": "units of celsius",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "powerSupplyProtection": {
                 "description": "undervoltage lockout, overvoltage protection thresholds of a supply",
@@ -27,45 +27,46 @@
                     "$ref": "#/$defs/powerSupplyProtection"
                 }
             }
-        }
+        },
+        "additionalProperties": false
     },
     "$defs": {
         "powerSupplyProtection": {
             "type": "object",
             "properties": {
-                "supplyName": {
-                    "description": "name of the power supply",
+                "supplyPinName": {
+                    "description": "name of the power supply pin or any other pin monitored",
                     "type": "string"
                 },
                 "overVoltageProtectionThresholdRising": {
                     "description": "Overvoltage Protection (OVP) Threshold with power supply rising",
                     "comment": "units of volts",
-                    "$ref": "../common/unit.json#/unit"
+                    "$ref": "../common/values.json#/valueOptions"
                 },
                 "overVoltageProtectionThresholdFalling": {
                     "description": "Overvoltage Protection (OVP) Threshold with power supply falling",
                     "comment": "units of volts",
-                    "$ref": "../common/unit.json#/unit"
+                    "$ref": "../common/values.json#/valueOptions"
                 },
                 "overVoltageProtectionHysteresis": {
                     "description": "Overvoltage Protection (OVP) Hysteresis",
                     "comment": "units of volts",
-                    "$ref": "../common/unit.json#/unit"
+                    "$ref": "../common/values.json#/valueOptions"
                 },
                 "underVoltageLockoutThresholdRising": {
                     "description": "Undervoltage Lockout (UVLO) Threshold with power supply rising",
                     "comment": "units of volts",
-                    "$ref": "../common/unit.json#/unit"
+                    "$ref": "../common/values.json#/valueOptions"
                 },
                 "underVoltageLockoutThresholdFalling": {
                     "description": "Undervoltage Lockout (UVLO) Threshold with power supply falling",
                     "comment": "units of volts",
-                    "$ref": "../common/unit.json#/unit"
+                    "$ref": "../common/values.json#/valueOptions"
                 },
                 "underVoltageLockoutHysteresis": {
                     "description": "Undervoltage Lockout (UVLO) Hysteresis",
                     "comment": "units of volts",
-                    "$ref": "../common/unit.json#/unit"
+                    "$ref": "../common/values.json#/valueOptions"
                 }
             }
         }

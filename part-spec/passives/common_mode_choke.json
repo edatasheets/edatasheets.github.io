@@ -1,14 +1,24 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/passives/common_mode_choke.json",
+    "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/common_mode_choke.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of common mode choke",
     "common_mode_choke": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "common_mode_choke"
+                ],
+                "type": "string"
+            },
             "diffModeCutoff": {
                 "description": "frequency at which the differential mode attenuation equals -3dB",
                 "comment": "units of Hz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "commonModeAttenuation": {
                 "description": "graph object to capture common mode attenuation of a common mode choke at various frequencies",
@@ -17,12 +27,12 @@
             "dcResistance": {
                 "description": "dc resistance (DCR) of a common mode choke",
                 "comment": "units of ohms",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "rmsCurrent": {
                 "description": "applied DC current (IRMS) that produces a common mode choke temperature rise of 40 deg C",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "intendedApplication": {
                 "description": "intended application of a particular common mode choke",
@@ -33,6 +43,7 @@
                 ],
                 "type": "string"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

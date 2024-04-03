@@ -1,10 +1,20 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/data_converter/adc.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/data_converter/adc.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of adc",
     "adc": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "adc"
+                ],
+                "type": "string"
+            },
             "digitalResolution": {
                 "description": "number of bits of resolution in the digital output",
                 "type": "number"
@@ -12,12 +22,12 @@
             "conversionTime": {
                 "description": "time required to convert from an analog signal to digital output",
                 "comment": "units of seconds",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "sampleRate": {
                 "description": "maximum rate at which the ADC can convert samples",
                 "$comment": "unit of hertz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "offsetError": {
                 "description": "difference (in LSB) of the output at the zero point between an actual and ideal ADC",
@@ -74,8 +84,12 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

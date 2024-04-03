@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/power/switching_regulator.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/switching_regulator.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of switching regulator",
     "switching_regulator": {
@@ -8,9 +8,17 @@
             "regulatorTopology",
             "vin",
             "vout",
-            "loadCurrent"
+            "loadCurrent",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "switching_regulator"
+                ],
+                "type": "string"
+            },
             "regulatorTopology": {
                 "description": "switching voltage regulator topology",
                 "examples": [
@@ -22,59 +30,61 @@
                 "type": "string"
             },
             "vin": {
-                "description": "input voltage range under which a device can be expected to reliabily operate",
+                "description": "input voltage range under which a device can be expected to reliably operate",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "vout": {
                 "description": "output voltage a device can regulate",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "feedbackVoltage": {
                 "description": "voltage comparison point at the feedback node",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "loadCurrent": {
                 "description": "load current supported by a device",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "voutAccuracy": {
                 "description": "output voltage variation at no load",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "loadRegulation": {
                 "description": "output voltage variation from no load to full load ",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "lineRegulation": {
                 "description": "output voltage variation from minimum input voltage to maximum input voltage ",
                 "comment": "units of volts",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "currentConsumption": {
-                "description": "current consumption of a device",
-                "comment": "units of amps",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             },
             "switchingFrequency": {
                 "description": "switching frequency (fsw) of voltage regulator",
                 "comment": "units of Hertz (Hz)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "enableTime": {
                 "description": "time between enable asserted and output voltage rising to 10% nominal",
                 "comment": "units of seconds",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "rampTime": {
                 "description": "time for output voltage to go from 10% vout nominal to 90% vout nominal",
                 "comment": "units of seconds",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "integratedFets": {
                 "description": "whether the regulator contains integrated switching mosfets",
@@ -92,6 +102,7 @@
                 "description": "power efficiency of a regulator as a function of output current",
                 "$ref": "../common/graph.json#/graph"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

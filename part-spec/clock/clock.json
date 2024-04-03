@@ -1,14 +1,24 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/clock/clock.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/clock/clock.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of clock",
     "clock": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "clock"
+                ],
+                "type": "string"
+            },
             "fixedFrequency": {
                 "description": "clock frequency value if the clock has a fixed frequency",
                 "comment": "units of Hz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "numberClockOutputs": {
                 "description": "number of clock outputs in a clock IC",
@@ -25,12 +35,12 @@
             "jitter": {
                 "description": "cycle to cycle clock jitter",
                 "comment": "units of seconds",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "frequencyTolerance": {
                 "description": "amount of frequency variation from nominal frequency",
                 "comment": "units of percentage",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "powerSupplyRejectionRatio": {
                 "description": "power supply rejection ratio (PSRR) or ratio between power supply variation and output variation",
@@ -50,7 +60,8 @@
             "currentConsumption": {
                 "description": "current used by device in various power modes",
                 "$ref": "../common/currentConsumption.json#/currentConsumption"
-            }
-        }
+            }       
+        },
+        "additionalProperties": false
     }
 }

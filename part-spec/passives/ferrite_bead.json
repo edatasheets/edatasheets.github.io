@@ -1,30 +1,41 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/passives/ferrite_bead.json",
+    "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/ferrite_bead.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of ferrite bead",
     "ferrite_bead": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "ferrite_bead"
+                ],
+                "type": "string"
+            },
             "dcResistance": {
                 "description": "dc resistance (DCR) of ferrite bead",
                 "comment": "units of ohms",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "rmsCurrent": {
                 "description": "applied DC current (IRMS) that produces a ferrite bead temperature rise of 40 deg C",
                 "comment": "units of amps",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "impedance100MHz": {
                 "description": "impedance of ferrite bead under standard testing conditions at 100MHz",
                 "comment": "units of ohms",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "impedanceTolerance": {
                 "description": "variation of ferrite bead impedance expressed as +/- percentage",
                 "comment": "units of percentage",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

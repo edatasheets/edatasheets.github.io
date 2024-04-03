@@ -1,13 +1,21 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/storage/sd_card.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/storage/sd_card.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of sd card",
     "sd_card": {
         "type": "object",
         "required": [
-            "capacity"
+            "capacity",
+            "partType"
         ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "sd_card"
+                ],
+                "type": "string"
+            },
             "type": {
                 "description": "type of sd card",
                 "examples": [
@@ -20,7 +28,7 @@
             "capacity": {
                 "description": "capacity of sd card",
                 "comment": "units of bytes (B)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "dataRate": {
                 "description": "maximum data rate of the sd card",
@@ -28,10 +36,13 @@
                 "type": "number"
             },
             "currentConsumption": {
-                "description": "current consumption of a device",
-                "comment": "units of amps",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

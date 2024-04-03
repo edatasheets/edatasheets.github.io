@@ -1,10 +1,20 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/sensor/gyroscope.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/gyroscope.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of gyroscope",
     "gyroscope": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "gyroscope"
+                ],
+                "type": "string"
+            },
             "gyroRanges": {
                 "description": "range of angular speed that gyro can measure",
                 "comment": "units of degrees-per-second (dps)",
@@ -13,7 +23,7 @@
             "gyroSensitivity": {
                 "description": "smallest change in angular speed gyro is able to capture (typical) at a given gyro range",
                 "comment": "units of LSB/dps",
-                "$ref": "../common/conditionalProperty.json#/conditionalProperty"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "gyroSensitivityOverTemperature": {
                 "description": "gyroscope sensitivity change over temperature",
@@ -49,12 +59,12 @@
             "bandwidth": {
                 "description": "bandwidth of gyroscope",
                 "comment": "units of Hertz (Hz)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputDataRate": {
                 "description": "output Data rate (ODR) of a device",
                 "comment": "units of Hertz (Hz)",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "outputType": {
                 "description": "measurement output type",
@@ -75,9 +85,13 @@
                 "type": "number"
             },
             "currentConsumption": {
-                "description": "current consumption of a device",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "description": "current used by device in various power modes",
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

@@ -1,10 +1,20 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/highspeed_mux.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/highspeed_mux.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of high speed mux",
     "highspeed_mux": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "highspeed_mux"
+                ],
+                "type": "string"
+            },
             "muxRatio": {
                 "description": "ratio of inputs to outputs",
                 "$ref": "../common/ratio.json#/ratio"
@@ -23,7 +33,7 @@
             "maxDataRate": {
                 "description": "maximum data rate supported by high speed mux",
                 "comment": "units of Hz",
-                "$ref": "../common/unit.json#/unit"
+                "$ref": "../common/values.json#/valueOptions"
             },
             "insertionLoss": {
                 "description": "insertion loss through high speed mux",
@@ -32,8 +42,12 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "../common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }

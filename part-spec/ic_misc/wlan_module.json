@@ -1,10 +1,20 @@
 {
-    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_misc/wlan_module.json",
+    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/wlan_module.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of wlan module",
     "wlan_module": {
         "type": "object",
+        "required": [
+            "partType"
+        ],
         "properties": {
+            "partType": {
+                "description": "part type",
+                "enum": [
+                    "wlan_module"
+                ],
+                "type": "string"
+            },
             "wlanSpec": {
                 "description": "version of wlan specification supported by module",
                 "examples": [
@@ -52,7 +62,7 @@
                 "type": "string"
             },
             "lteCoexFilter": {
-                "description": "describes whether module supports lte coexistance filtering",
+                "description": "describes whether module supports lte coexistence filtering",
                 "type": "boolean"
             },
             "interface": {
@@ -66,8 +76,12 @@
             },
             "currentConsumption": {
                 "description": "current used by device in various power modes",
-                "$ref": "..common/currentConsumption.json#/currentConsumption"
+                "type": "array",
+                "items": {
+                    "$ref": "../common/currentConsumption.json#/currentConsumption"
+                }
             }
-        }
+        },
+        "additionalProperties": false
     }
 }
