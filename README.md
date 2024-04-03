@@ -71,7 +71,7 @@ A digital datasheet shall follow the international standard notation, YYYY-MM-DD
 
 ####  4.4	 Top Level Component Specification 
 
-Source: [component.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/component.json)
+Source: [component.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/component.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -85,7 +85,7 @@ Source: [component.json](https://github.com/edatasheets/digital-datasheets/blob/
 
 ####  4.5.1	 Specification To Capture Information To Identify Components
 
-Source: [componentID.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/componentID.json)
+Source: [componentID.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/componentID.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -117,7 +117,7 @@ Source: [componentID.json](https://github.com/edatasheets/digital-datasheets/blo
 
 ####  4.5.4	 specification to capture protection thresholds data of a component
 
-Source: [componentProtectionThresholds.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/componentProtectionThresholds.json)
+Source: [componentProtectionThresholds.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/componentProtectionThresholds.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -188,7 +188,7 @@ Source: [graph.json](https:/github.com/edatasheets/digital-datasheets/blob/main/
 
 ####  4.5.10	 specification of an instance in a part
 
-Source: [instanceSpec.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/instanceSpec.json)
+Source: [instanceSpec.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/instanceSpec.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -213,7 +213,7 @@ Source: [package.json](https:/github.com/edatasheets/digital-datasheets/blob/mai
 
 ####  4.5.12	 Specification Of Pinpaths Through An IC
 
-Source: [pinPaths.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/pinPaths.json)
+Source: [pinPaths.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/pinPaths.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -229,7 +229,7 @@ Source: [pinPaths.json](https://github.com/edatasheets/digital-datasheets/blob/m
 
 ####  4.5.14	 Specification Of Pins
 
-Source: [pinSpec.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/pinSpec.json)
+Source: [pinSpec.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/pinSpec.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -279,7 +279,7 @@ Source: [pinSpec.json](https://github.com/edatasheets/digital-datasheets/blob/ma
 
 ####  4.5.17	 Specification Of Power Fets Properties
 
-Source: [powerFetProperties.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/common/powerFetProperties.json)
+Source: [powerFetProperties.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/powerFetProperties.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -360,7 +360,7 @@ Source: [values.json](https:/github.com/edatasheets/digital-datasheets/blob/main
 
 ####  4.6.1	 Specification Of Clock
 
-Source: [clock.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/clock/clock.json)
+Source: [clock.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/clock/clock.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -396,7 +396,7 @@ Source: [oscillator.json](https:/github.com/edatasheets/digital-datasheets/blob/
 
 ####  4.7.1	 Specification Of Adc
 
-Source: [adc.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/data_converter/adc.json)
+Source: [adc.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/data_converter/adc.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -417,7 +417,7 @@ Source: [adc.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 
 ####  4.7.2	 Specification Of Dac
 
-Source: [dac.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/data_converter/dac.json)
+Source: [dac.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/data_converter/dac.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -438,7 +438,7 @@ Source: [dac.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 
 ####  4.8.1	 Specification Of Connector
 
-Source: [connector.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/hardware/connector.json)
+Source: [connector.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/hardware/connector.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -452,7 +452,7 @@ Source: [connector.json](https://github.com/edatasheets/digital-datasheets/blob/
 
 ####  4.8.2	 Specification Of Switch
 
-Source: [switch.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/hardware/switch.json)
+Source: [switch.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/hardware/switch.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -470,7 +470,7 @@ Source: [switch.json](https://github.com/edatasheets/digital-datasheets/blob/mai
 
 ####  4.9.1	 Specification Of Bridge Chip
 
-Source: [bridge_chip.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/bridge_chip.json)
+Source: [bridge_chip.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/bridge_chip.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -482,7 +482,7 @@ Source: [bridge_chip.json](https://github.com/edatasheets/digital-datasheets/blo
 
 ####  4.9.2	 Specification Of High Speed Mux
 
-Source: [highspeed_mux.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/highspeed_mux.json)
+Source: [highspeed_mux.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/highspeed_mux.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -495,7 +495,7 @@ Source: [highspeed_mux.json](https://github.com/edatasheets/digital-datasheets/b
 
 ####  4.9.3	 Specification Of Level Shifter
 
-Source: [level_shifter.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/level_shifter.json)
+Source: [level_shifter.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/level_shifter.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -506,7 +506,7 @@ Source: [level_shifter.json](https://github.com/edatasheets/digital-datasheets/b
 
 ####  4.9.4	 Specification Of Redriver
 
-Source: [redriver.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/redriver.json)
+Source: [redriver.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/redriver.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -518,7 +518,7 @@ Source: [redriver.json](https://github.com/edatasheets/digital-datasheets/blob/m
 
 ####  4.9.5	 Specification Of Retimer
 
-Source: [retimer.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/retimer.json)
+Source: [retimer.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/retimer.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -535,7 +535,7 @@ Source: [retimer.json](https://github.com/edatasheets/digital-datasheets/blob/ma
 
 ####  4.9.6	 Specification Of USB Battery Charging 1.2 (bc12) Detector
 
-Source: [usb_bc12.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usb_bc12.json)
+Source: [usb_bc12.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/usb_bc12.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -546,7 +546,7 @@ Source: [usb_bc12.json](https://github.com/edatasheets/digital-datasheets/blob/m
 
 ####  4.9.7	 Specification Of Usb-c Pd Controller
 
-Source: [usbc_pdcontroller.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usbc_pdcontroller.json)
+Source: [usbc_pdcontroller.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/usbc_pdcontroller.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -573,7 +573,7 @@ Source: [usbc_pdcontroller.json](https://github.com/edatasheets/digital-datashee
 
 ####  4.9.8	 Specification Of Usb-c Port Controller
 
-Source: [usbc_portcontroller.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usbc_portcontroller.json)
+Source: [usbc_portcontroller.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/usbc_portcontroller.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -598,7 +598,7 @@ Source: [usbc_portcontroller.json](https://github.com/edatasheets/digital-datash
 
 ####  4.10.1	 Specification Of Microcontroller/ec
 
-Source: [microcontroller.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_microcontroller/microcontroller.json)
+Source: [microcontroller.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_microcontroller/microcontroller.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -616,7 +616,7 @@ Source: [microcontroller.json](https://github.com/edatasheets/digital-datasheets
 
 ####  4.11.1	 Specification Of Audio Codec
 
-Source: [audio_codec.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/audio_codec.json)
+Source: [audio_codec.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_misc/audio_codec.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -632,7 +632,7 @@ Source: [audio_codec.json](https://github.com/edatasheets/digital-datasheets/blo
 
 ####  4.11.2	 Specification Of Speaker Amplifier
 
-Source: [speaker_amplifier.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/speaker_amplifier.json)
+Source: [speaker_amplifier.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_misc/speaker_amplifier.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -647,7 +647,7 @@ Source: [speaker_amplifier.json](https://github.com/edatasheets/digital-datashee
 
 ####  4.11.3	 Specification Of Tpm
 
-Source: [tpm.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/tpm.json)
+Source: [tpm.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_misc/tpm.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -657,7 +657,7 @@ Source: [tpm.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 
 ####  4.11.4	 Specification Of WLAN Module
 
-Source: [wlan_module.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/wlan_module.json)
+Source: [wlan_module.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_misc/wlan_module.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -673,7 +673,7 @@ Source: [wlan_module.json](https://github.com/edatasheets/digital-datasheets/blo
 
 ####  4.11.5	 Specification Of WWAN Module
 
-Source: [wwan_module.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_misc/wwan_module.json)
+Source: [wwan_module.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_misc/wwan_module.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -689,7 +689,7 @@ Source: [wwan_module.json](https://github.com/edatasheets/digital-datasheets/blo
 
 ####  4.12.1	 Specification Of Logic Gate
 
-Source: [logic_gate.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/logic/logic_gate.json)
+Source: [logic_gate.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/logic/logic_gate.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -705,7 +705,7 @@ Source: [logic_gate.json](https://github.com/edatasheets/digital-datasheets/blob
 
 ####  4.13.1	 Specification Of Dram
 
-Source: [dram.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/dram.json)
+Source: [dram.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/memory/dram.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -731,7 +731,7 @@ Source: [dram.json](https://github.com/edatasheets/digital-datasheets/blob/main/
 
 ####  4.13.2	 Specification Of Eeprom
 
-Source: [eeprom.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/eeprom.json)
+Source: [eeprom.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/memory/eeprom.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -749,7 +749,7 @@ Source: [eeprom.json](https://github.com/edatasheets/digital-datasheets/blob/mai
 
 ####  4.13.3	 Specification Of Flash Memory
 
-Source: [flash_memory.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/flash_memory.json)
+Source: [flash_memory.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/memory/flash_memory.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -772,7 +772,7 @@ Source: [flash_memory.json](https://github.com/edatasheets/digital-datasheets/bl
 
 ####  4.13.4	 Specification Of Rom
 
-Source: [rom.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/memory/rom.json)
+Source: [rom.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/memory/rom.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -849,7 +849,7 @@ Source: [inductor.json](https:/github.com/edatasheets/digital-datasheets/blob/ma
 
 ####  4.14.5	 Specification Of Resistor
 
-Source: [resistor.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/resistor.json)
+Source: [resistor.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/passives/resistor.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -868,7 +868,7 @@ Source: [resistor.json](https://github.com/edatasheets/digital-datasheets/blob/m
 
 ####  4.15.1	 Specification Of Battery Charger
 
-Source: [battery_charger.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/battery_charger.json)
+Source: [battery_charger.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/power/battery_charger.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -914,7 +914,7 @@ Source: [battery_charger.json](https://github.com/edatasheets/digital-datasheets
 
 ####  4.15.2	 Specification Of Display Backlight Driver
 
-Source: [displaybacklight_driver.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/displaybacklight_driver.json)
+Source: [displaybacklight_driver.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/power/displaybacklight_driver.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -937,7 +937,7 @@ Source: [displaybacklight_driver.json](https://github.com/edatasheets/digital-da
 
 ####  4.15.3	 Specification Of Linear Regulator
 
-Source: [linear_regulator.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/linear_regulator.json)
+Source: [linear_regulator.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/power/linear_regulator.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -961,7 +961,7 @@ Source: [linear_regulator.json](https://github.com/edatasheets/digital-datasheet
 
 ####  4.15.4	 Specification Of Load Switch
 
-Source: [load_switch.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/load_switch.json)
+Source: [load_switch.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/power/load_switch.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -986,7 +986,7 @@ Source: [load_switch.json](https://github.com/edatasheets/digital-datasheets/blo
 
 ####  4.15.5	 specification of a pmic
 
-Source: [pmic.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/pmic.json)
+Source: [pmic.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/power/pmic.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -997,7 +997,7 @@ Source: [pmic.json](https://github.com/edatasheets/digital-datasheets/blob/main/
 
 ####  4.15.6	 Specification Of Switching Regulator
 
-Source: [switching_regulator.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/power/switching_regulator.json)
+Source: [switching_regulator.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/power/switching_regulator.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1023,7 +1023,7 @@ Source: [switching_regulator.json](https://github.com/edatasheets/digital-datash
 
 ####  4.16.1	 Specification Of Bjt
 
-Source: [bjt.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/bjt.json)
+Source: [bjt.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/semiconductor/bjt.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1059,7 +1059,7 @@ Source: [bjt.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 
 ####  4.16.2	 Specification Of Diode
 
-Source: [diode.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/diode.json)
+Source: [diode.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/semiconductor/diode.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1087,7 +1087,7 @@ Source: [diode.json](https://github.com/edatasheets/digital-datasheets/blob/main
 
 ####  4.16.3	 Specification Of LED
 
-Source: [led.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/led.json)
+Source: [led.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/semiconductor/led.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1107,7 +1107,7 @@ Source: [led.json](https://github.com/edatasheets/digital-datasheets/blob/main/p
 
 ####  4.16.4	 Specification Of Mosfet
 
-Source: [mosfet.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/semiconductor/mosfet.json)
+Source: [mosfet.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/semiconductor/mosfet.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1153,7 +1153,7 @@ Source: [mosfet.json](https://github.com/edatasheets/digital-datasheets/blob/mai
 
 ####  4.17.1	 Specification Of Accelerometer
 
-Source: [accelerometer.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/accelerometer.json)
+Source: [accelerometer.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/sensor/accelerometer.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1176,7 +1176,7 @@ Source: [accelerometer.json](https://github.com/edatasheets/digital-datasheets/b
 
 ####  4.17.2	 Specification Of Gyroscope
 
-Source: [gyroscope.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/gyroscope.json)
+Source: [gyroscope.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/sensor/gyroscope.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1197,7 +1197,7 @@ Source: [gyroscope.json](https://github.com/edatasheets/digital-datasheets/blob/
 
 ####  4.17.3	 Specification Of Magnetic Sensor
 
-Source: [magnetic_sensor.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/magnetic_sensor.json)
+Source: [magnetic_sensor.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/sensor/magnetic_sensor.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1217,7 +1217,7 @@ Source: [magnetic_sensor.json](https://github.com/edatasheets/digital-datasheets
 
 ####  4.17.4	 Specification Of Thermal Sensor
 
-Source: [thermal_sensor.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/sensor/thermal_sensor.json)
+Source: [thermal_sensor.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/sensor/thermal_sensor.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1235,7 +1235,7 @@ Source: [thermal_sensor.json](https://github.com/edatasheets/digital-datasheets/
 
 ####  4.18.1	 Specification Of SD Card
 
-Source: [sd_card.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/storage/sd_card.json)
+Source: [sd_card.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/storage/sd_card.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -1247,7 +1247,7 @@ Source: [sd_card.json](https://github.com/edatasheets/digital-datasheets/blob/ma
 
 ####  4.18.2	 Specification Of SSD
 
-Source: [ssd.json](https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/storage/ssd.json)
+Source: [ssd.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/storage/ssd.json)
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
