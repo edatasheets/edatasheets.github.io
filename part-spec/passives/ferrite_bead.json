@@ -1,5 +1,5 @@
 {
-    "$id": "https:/github.com/edatasheets/digital-datasheets/blob/main/part-spec/passives/ferrite_bead.json",
+    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/passives/ferrite_bead.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of ferrite bead",
     "ferrite_bead": {

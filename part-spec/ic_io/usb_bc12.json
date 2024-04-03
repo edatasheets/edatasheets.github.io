@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/edatasheets/digital-datasheets/blob/main/part-spec/ic_io/usb_bc12.json",
+    "$id": "https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/ic_io/usb_bc12.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "specification of USB battery charging 1.2 (bc12) detector",
     "usb_bc12": {
