@@ -183,7 +183,7 @@ Source: [externalFileMap.json](https://github.com/edatasheets/edatasheets.github
 |additionalCoreProperties|core component properties as defined by the specific component spec file. These properties are described by the changing part of the part number|../common/externalFile.json#/externalFile| |
 |pins|pin properties specified by the pin spec file|../common/externalFile.json#/externalFile| |
 |package|package information specified by the package spec file|../common/externalFile.json#/externalFile| |
-|powerSequence|information about component power sequencing|../common/powerSequence.json#/powerSequenceTable| |
+|powerSequence|information about component power sequencing|../common/externalFile.json#/externalFile|  |
 |register|register information|../common/externalFile.json#/externalFile| |
 |thermal|component temperature and thermal resistance information|../common/externalFile.json#/externalFile| |
 |reliability|reliability information about the component|../common/externalFile.json#/externalFile| |
