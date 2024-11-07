@@ -84,7 +84,7 @@ Source: [component.json](https://github.com/edatasheets/edatasheets.github.io/bl
 |package|component package information|./common/package.json#/package|No|
 |register|register information|./common/register.json#/register|No|
 |thermal|component temperature and thermal resistance information|./common/thermal.json#/thermal|No|
-|componentPropertyExternalFiles|external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package information in the same file|#/$defs/externalFileMap|No|
+|componentPropertyExternalFiles|external files that describe key component properties. External files can be used in lieu of defining core properties, pins, and package information in the same file|./common/externalFileMap.json#/externalFileMap|No|
 |additionalSpecExternalFiles|external files that contain information outside of the json spec. Examples include layout, simulation, etc.|./common/externalFile.json#/externalFile|No|
 |reliability|reliability information about the component|./common/reliability.json#/reliability|No|
 |powerSequence|information about component power sequencing|./common/powerSequence.json#/powerSequenceTable|No|
@@ -173,7 +173,22 @@ Source: [externalFile.json](https://github.com/edatasheets/edatasheets.github.io
 |standardReferenced|optional, name of the standard the file is written in|String| |
 |fileURI|URI linking to the CAD file|String| |
 
-####  4.5.8	 Specification Of a Graph
+####  4.5.8	 Specification For Referencing An External File For Different Components
+
+Source: [externalFileMap.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/externalFileMap.json)
+
+|Property|Description|JSON Data Type|Required?|
+|:----|:----|:----|:----|
+|coreProperties|core component properties as defined by the specific component spec file. These properties are described by the common part of the part number|../common/externalFile.json#/externalFile| |
+|additionalCoreProperties|core component properties as defined by the specific component spec file. These properties are described by the changing part of the part number|../common/externalFile.json#/externalFile| |
+|pins|pin properties specified by the pin spec file|../common/externalFile.json#/externalFile| |
+|package|package information specified by the package spec file|../common/externalFile.json#/externalFile| |
+|powerSequence|information about component power sequencing|../common/powerSequence.json#/powerSequenceTable| |
+|register|register information|../common/externalFile.json#/externalFile| |
+|thermal|component temperature and thermal resistance information|../common/externalFile.json#/externalFile| |
+|reliability|reliability information about the component|../common/externalFile.json#/externalFile| |
+
+####  4.5.9	 Specification Of a Graph
 
 Source: [graph.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/graph.json)
 
@@ -187,7 +202,7 @@ Source: [graph.json](https://github.com/edatasheets/edatasheets.github.io/blob/m
 |numberOfCurves|total number of curves in graph|Number| |
 |curve|data represented by one or more curves in a graph|array of #/$defs/curve| |
 
-####  4.5.9	 Curve
+####  4.5.10	 Curve
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -195,7 +210,7 @@ Source: [graph.json](https://github.com/edatasheets/edatasheets.github.io/blob/m
 |xData|x-axis values of the curve|array of Number| |
 |yData|y-axis values of the curve|array of Number| |
 
-####  4.5.10	 Specification Of An Instance In a Part
+####  4.5.11	 Specification Of An Instance In a Part
 
 Source: [instanceSpec.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/instanceSpec.json)
 
@@ -205,7 +220,7 @@ Source: [instanceSpec.json](https://github.com/edatasheets/edatasheets.github.io
 |instanceName|name of an instance of the part|String| |
 |instanceProperties|instance properties, as defined in the part specification|../common/coreProperties.json#/coreProperties| |
 
-####  4.5.11	 Specification Of a Package
+####  4.5.12	 Specification Of a Package
 
 Source: [package.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/package.json)
 
@@ -217,7 +232,7 @@ Source: [package.json](https://github.com/edatasheets/edatasheets.github.io/blob
 |standardPackageSize|name of standard package size (imperial)|String| |
 |standardPackageType|name of standard package types|String| |
 
-####  4.5.12	 Specification Of Pinpaths Through An IC
+####  4.5.13	 Specification Of Pinpaths Through An IC
 
 Source: [pinPaths.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/pinPaths.json)
 
@@ -226,14 +241,14 @@ Source: [pinPaths.json](https://github.com/edatasheets/edatasheets.github.io/blo
 |numberOfPinPaths|number of pinPaths defined. This number should not be higher than the number of components included in the part|Number| |
 |partPinPaths|list of pins associated with each component in a multi-component part|array of #/$defs/partPinPaths|Yes|
 
-####  4.5.13	 PartPinPaths
+####  4.5.14	 PartPinPaths
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |componentName|name of a component within a part |String| |
 |componentPinNames|names of pins associated with each of the component in the part. Pin names must match the name used in part pin definition|array of String| |
 
-####  4.5.14	 Specification Of Pins
+####  4.5.15	 Specification Of Pins
 
 Source: [pinSpec.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/pinSpec.json)
 
@@ -248,7 +263,7 @@ Source: [pinSpec.json](https://github.com/edatasheets/edatasheets.github.io/blob
 |functionProperties|list of properties for each pin function configuration|array of #/$defs/functionProperties| |
 |pinPaths|information on pin paths - pins associated with each component in a multi-component part (such as A1,Y1 and A2,Y2)|../common/pinPaths.json#/pinPaths| |
 
-####  4.5.15	 ExternalComponents
+####  4.5.16	 ExternalComponents
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -256,14 +271,14 @@ Source: [pinSpec.json](https://github.com/edatasheets/edatasheets.github.io/blob
 |configuration|electrical configuration of component connected to pin with respect to the pin|String|Yes|
 |value|value of component|../common/values.json#/valueOptions| |
 
-####  4.5.16	 FunctionProperties
+####  4.5.17	 FunctionProperties
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
 |perFunctionName|name of the function of a pin|String| |
 |perFunctionProperties|list of pin properties that change based on the pin function configuration|#/$defs/pinProperties| |
 
-####  4.5.17	 PinProperties
+####  4.5.18	 PinProperties
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -290,7 +305,7 @@ Source: [pinSpec.json](https://github.com/edatasheets/edatasheets.github.io/blob
 |esd|indicates whether ESD protection exists on a pin|Boolean| |
 |externalComponents|list of external component structures recommended to be attached to a pin|array of #/$defs/externalComponents| |
 
-####  4.5.18	 Specification Of Power Fets Properties
+####  4.5.19	 Specification Of Power Fets Properties
 
 Source: [powerFetProperties.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/powerFetProperties.json)
 
@@ -300,7 +315,7 @@ Source: [powerFetProperties.json](https://github.com/edatasheets/edatasheets.git
 |inputPowerFetPair|input power fet pair (in a buck-boost configuration)|#/$defs/powerFetPair| |
 |outputPowerFetPair|output power fet pair (in a buck-boost configuration)|#/$defs/powerFetPair| |
 
-####  4.5.19	 PowerFetPair
+####  4.5.20	 PowerFetPair
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -309,7 +324,7 @@ Source: [powerFetProperties.json](https://github.com/edatasheets/edatasheets.git
 |rdsonHSFET|high side FET on-resistance|../common/values.json#/valueOptions| |
 |rdsonLSFET|low side FET on-resistance|../common/values.json#/valueOptions| |
 
-####  4.5.20	 Specification Of Power Sequencing Information
+####  4.5.21	 Specification Of Power Sequencing Information
 
 Source: [powerSequence.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/powerSequence.json)
 
@@ -317,7 +332,7 @@ Source: [powerSequence.json](https://github.com/edatasheets/edatasheets.github.i
 |:----|:----|:----|:----|
 |values|list of power sequence conditions that apply to a component|array of #/$defs/powerSequence| |
 
-####  4.5.21	 PowerSequence
+####  4.5.22	 PowerSequence
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -337,7 +352,7 @@ Source: [powerSequence.json](https://github.com/edatasheets/edatasheets.github.i
 |transitionStartCondition|the percentage of max voltage where rise or fall time starts being measured for timing (only applies to one signal)|../common/values.json#/valueOptions| |
 |transitionEndCondition|the percentage of max voltage where rise or fall time stops being measured for timing (only applies to one signal)|../common/values.json#/valueOptions| |
 
-####  4.5.22	 Specifications Of a Ratio
+####  4.5.23	 Specifications Of a Ratio
 
 Source: [ratio.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/ratio.json)
 
@@ -346,7 +361,7 @@ Source: [ratio.json](https://github.com/edatasheets/edatasheets.github.io/blob/m
 |numerator|numerator of ratio|Number| |
 |denominator|denominator of ratio|Number| |
 
-####  4.5.23	 Specification Of a Register
+####  4.5.24	 Specification Of a Register
 
 Source: [register.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/register.json)
 
@@ -364,7 +379,7 @@ Source: [register.json](https://github.com/edatasheets/edatasheets.github.io/blo
 |registerAccessType|access type of a Register|String| |
 |registerBitField|describes the bit fields in the register|#/$defs/registerBitField| |
 
-####  4.5.24	 RegisterBitField
+####  4.5.25	 RegisterBitField
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
@@ -376,7 +391,7 @@ Source: [register.json](https://github.com/edatasheets/edatasheets.github.io/blo
 |bitFieldResetValue|Reset value of a bit field|String| |
 |bitFieldAccessType|Access type of a bit field|String| |
 
-####  4.5.25	 Specification Of The Reliability Of a Component
+####  4.5.26	 Specification Of The Reliability Of a Component
 
 Source: [reliability.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/reliability.json)
 
@@ -385,7 +400,7 @@ Source: [reliability.json](https://github.com/edatasheets/edatasheets.github.io/
 |failuresInTime|the number of expected failures per one billion hours of operation for a device|../common/values.json#/valueOptions| |
 |meanTimeToFail|the average time a product or system functions before its first failure under normal conditions|../common/values.json#/valueOptions| |
 
-####  4.5.26	 Specification Of Thermal Properties On Components
+####  4.5.27	 Specification Of Thermal Properties On Components
 
 Source: [thermal.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/thermal.json)
 
@@ -408,7 +423,7 @@ Source: [thermal.json](https://github.com/edatasheets/edatasheets.github.io/blob
 |thermalDesignPower|power at which thermal compliance should be evaluated at steady-state|../common/values.json#/valueOptions| |
 |peakPower|maximum transient power the part will dissipate|../common/values.json#/valueOptions| |
 
-####  4.5.27	 Specification Of Value
+####  4.5.28	 Specification Of Value
 
 Source: [values.json](https://github.com/edatasheets/edatasheets.github.io/blob/main/part-spec/common/values.json)
 
@@ -416,7 +431,7 @@ Source: [values.json](https://github.com/edatasheets/edatasheets.github.io/blob/
 |:----|:----|:----|:----|
 |values|list of values that reflect possible values for a property|array of #/$defs/value| |
 
-####  4.5.28	 Value
+####  4.5.29	 Value
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
