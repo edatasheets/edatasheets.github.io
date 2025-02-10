@@ -1,0 +1,35 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Remote Release Pull Request
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  repository_dispatch:
+    types: [create-release-pull-request]
+
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate branch name
+        id: generate_branch
+        run: echo "branch=release-${{ github.event.client_payload.release.tag_name }}" >> $GITHUB_ENV
+        
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: '${{ env.branch }}'
+
+      - name: Create Pull Request
+        run: |
+          gh pr create \
+            --title "Automatic Release - ${{ github.event.client_payload.release.tag_name }}" \
+            --body "$(echo -e "This is an automated pull request generating a new electronic datasheets standard release.\n\n[Release Notes](https://github.com/edatasheets/edatasheets/releases/tag/${{github.event.client_payload.release.tag_name }})")" \
+            --base main \
+            --head ${{ env.branch }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
