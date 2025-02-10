@@ -9,7 +9,7 @@
         ],
         "properties": {
             "partName": {
-                "description": "name of the part defined in the digital datasheets specifications",
+                "description": "name of the part defined in the electronic datasheets specifications",
                 "examples": [
                     "linear_regulator",
                     "switching_regulator",
