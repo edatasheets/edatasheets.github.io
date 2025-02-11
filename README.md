@@ -72,7 +72,7 @@ Source: [component.json](https://github.com/edatasheets/digital-datasheets/blob/
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|componentID|methods for identifying the version of the digital datasheet|./common/componentID.json#/componentID|Yes|
+|componentID|methods for identifying the version of the electronic datasheet|./common/componentID.json#/componentID|Yes|
 |coreProperties|core component properties as defined by the specific component spec file|./common/coreProperties.json#/coreProperties|No|
 |pins|array of pin objects with associated properties|./common/pinSpec.json#/pinSpec|No |
 |package|component package information|./common/package.json#/package|No|
@@ -94,8 +94,8 @@ Source: [componentID.json](https://github.com/edatasheets/edatasheets.github.io/
 |manufacturer|company that manufactures the part|String|Yes|
 |componentName|base part name that describes the form and fit of a component|String| |
 |orderableMPN|orderable manufacturer part numbers, including packing and software information|array of String|Yes|
-|sourceDatasheetID|methods for identifying the human-readable source information for a digital datasheet|#/$defs/sourceDatasheetID|Yes|
-|digitalDatasheetID|methods for identifying the version of the digital datasheet|#/$defs/digitalDatasheetID|Yes|
+|sourceDatasheetID|methods for identifying the human-readable source information for a electronic datasheet|#/$defs/sourceDatasheetID|Yes|
+|digitalDatasheetID|methods for identifying the version of the electronic datasheet|#/$defs/digitalDatasheetID|Yes|
 |status|production status of a component|String| |
 |complianceList|list of standards the part complies with|array of String| |
 
@@ -103,9 +103,9 @@ Source: [componentID.json](https://github.com/edatasheets/edatasheets.github.io/
 
 |Property|Description|JSON Data Type|Required?|
 |:----|:----|:----|:----|
-|publishedDate|date the digital datasheet was published|String| |
-|eDatasheetSpecRevision|revision of the digital datasheet specifications used to create the digital datasheet|String|Yes|
-|guid|vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify digital datasheet version|String| |
+|publishedDate|date the electronic datasheet was published|String| |
+|eDatasheetSpecRevision|revision of the electronic datasheet specifications used to create the electronic datasheet|String|Yes|
+|guid|vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify electronic datasheet version|String| |
 
 ####  4.5.3	 SourceDatasheetID
 
