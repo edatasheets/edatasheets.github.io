@@ -8,7 +8,7 @@
 	],
 	"properties": {
 		"componentID": {
-			"description": "methods for identifying the version of the digital datasheet",
+			"description": "methods for identifying the version of the electronic datasheet",
 			"$ref": "./common/componentID.json#/componentID"
 		},
 		"coreProperties": {

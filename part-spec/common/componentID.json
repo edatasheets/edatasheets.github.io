@@ -44,11 +44,11 @@
                 }
             },
             "sourceDatasheetID": {
-                "description": "methods for identifying the human-readable source information for a digital datasheet",
+                "description": "methods for identifying the human-readable source information for a electronic datasheet",
                 "$ref": "#/$defs/sourceDatasheetID"
             },
             "digitalDatasheetID": {
-                "description": "methods for identifying the version of the digital datasheet",
+                "description": "methods for identifying the version of the electronic datasheet",
                 "$ref": "#/$defs/digitalDatasheetID"
             },
             "status": {
@@ -105,12 +105,12 @@
             ],
             "properties": {
                 "publishedDate": {
-                    "description": "date the digital datasheet was published",
+                    "description": "date the electronic datasheet was published",
                     "example": "2022-03-31",
                     "type": "string"
                 },
                 "eDatasheetSpecRevision": {
-                    "description": "revision of the digital datasheet specifications used to create the digital datasheet",
+                    "description": "revision of the electronic datasheet specifications used to create the electronic datasheet",
                     "type": "string",
                     "enum": [
                         "1.0",
@@ -119,7 +119,7 @@
                     ]
                 },
                 "guid": {
-                    "description": "vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify digital datasheet version",
+                    "description": "vendor defined guid (see https://www.guidgenerator.com/) to uniquely identify electronic datasheet version",
                     "type": "string"
                 }
             }
